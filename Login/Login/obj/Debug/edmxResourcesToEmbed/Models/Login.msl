@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="desportoModelStoreContainer" CdmEntityContainer="desportoEntities">
+    <EntitySetMapping Name="Atletas">
+      <EntityTypeMapping TypeName="desportoModel.Atleta">
+        <MappingFragment StoreEntitySet="Atleta">
+          <ScalarProperty Name="id_atleta" ColumnName="id_atleta" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="data_nascimento" ColumnName="data_nascimento" />
+          <ScalarProperty Name="genero" ColumnName="genero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
