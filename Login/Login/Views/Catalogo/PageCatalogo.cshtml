@@ -1,9 +1,7 @@
-﻿@model Login.Models.Cliente
+@model IEnumerable<Login.Models.Professor>
+
 @{
-                /**/
-
-                Layout = null;
-
+    Layout = null;
 }
 
 <!DOCTYPE html>
@@ -204,9 +202,78 @@
         </nav>
     </header>
 
-    <section id="form-div"></section>
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Data_Nascimento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Password)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Classificacao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Numero_Telemovel)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ativo)
+                </th>
+                <th></th>
+            </tr>
+
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+
+                {
+                   <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Data_Nascimento)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Password)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Classificacao)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Numero_Telemovel)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ativo)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
 </body>
 </html>
+
+
+
+
+
 
 
 
